@@ -1,9 +1,11 @@
 module.exports = {
     content: ["./src/**/*.{html,js}"],
     theme: {
-        container: {
-            center: true,
-          },
+        extend: {
+            backgroundImage: {
+                'login-background': "url('/img/login-background.jpg')",
+            }
+        }
     },
     plugins: [],
 }
