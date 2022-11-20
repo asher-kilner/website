@@ -5,13 +5,13 @@ function Login(){
     const navigate = useNavigate();
     const [password, setpassword] = useState("");
     const [authenticated, setauthenticated] = useState(
-        localStorage.getItem(localStorage.getItem("authenticated") || false)
+        localStorage.getItem(localStorage.getItem("authenticated") || 'false')
     );
     const login = { password: "password" };
     const handleSubmit = (e) => {
         e.preventDefault();
         if (login.password === password) {
-        localStorage.setItem("authenticated", true);
+        localStorage.setItem("authenticated", 'true');
         navigate("/home");
         }
     };
