@@ -4,6 +4,8 @@ import Footer from './Components/Footer'
 import RSVPForm from './Components/RSVPForm'
 import { Navigate } from "react-router-dom";
 import './index.css'
+import { Button, CssBaseline, ThemeProvider } from '@mui/material';
+import { appTheme } from 'themes/theme';
 
 
 function App() {
@@ -21,12 +23,21 @@ function App() {
         return <Navigate replace to="/login" />;
     } else {
         return (
-            <div>
-                <Header/>
-                <RSVPForm/>
-                <h1>Asher loves chelsea lots and lots X</h1>
-                <Footer/>
-            </div>
+            <ThemeProvider theme={appTheme}>
+                <CssBaseline enableColorScheme />
+                <div>
+                    <Header/>
+                    <RSVPForm/>
+                    <h1>Asher loves chelsea lots and lots X</h1>
+                    <Button color="primary" variant="contained">
+                    Primary
+                    </Button>
+                    <Button color="secondary" variant="contained">
+                    Secondary
+                    </Button>   
+                    <Footer/>
+                </div>
+            </ThemeProvider>
         );
     }
 }

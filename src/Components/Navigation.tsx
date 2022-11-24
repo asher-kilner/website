@@ -41,9 +41,14 @@ function Navigation(){
                 (styles, item) => item && 
                 <animated.div 
                     style={styles}
-                    className="fixed bg-white top-0  left-0 w-2/6 h-full z-50 shadow"
-                    >
-                        This is the menu
+                    className="fixed bg-white top-0  left-0 w-2/6 h-full z-50 shadow">
+                        <div className="p-4 text-center border-2">
+                            Navigation
+                        </div>
+                        <div className="divide-y">
+                            <div className="p-3 hover:bg-green-900">venue</div>
+                            <div className="p-3 hover:bg-green-900">accomodation</div>
+                        </div>
                 </animated.div>
             )}
         </nav>
