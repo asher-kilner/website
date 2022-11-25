@@ -2,12 +2,14 @@ import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListI
 import MenuIcon from '@mui/icons-material/Menu';
 import GiteIcon from '@mui/icons-material/Gite';
 import BedIcon from '@mui/icons-material/Bed';
-import { Link } from "react-router-dom";
+import RsvpIcon from '@mui/icons-material/Rsvp';
+import HomeIcon from '@mui/icons-material/Home';
+import { Link, useNavigate } from "react-router-dom";
 import ViewListIcon from '@mui/icons-material/ViewList';
 import React from "react";
-import Navigation from "./Navigation"
 
 function Header(){
+    const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -16,9 +18,12 @@ function Header(){
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const signOut = () => {
+        localStorage.setItem("authenticated", 'false');
+        navigate("/login");
+    }
     return(
         <header>
-            {/* <Navigation/> */}
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
                     <Toolbar>
@@ -35,7 +40,7 @@ function Header(){
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         
                     </Typography>
-                    <Button color="inherit">Sign Out</Button>
+                    <Button color="inherit" onClick={signOut}>Sign Out</Button>
                     </Toolbar>
                 </AppBar>
             </Box>
@@ -52,6 +57,14 @@ function Header(){
                             <ListItemText disableTypography className="text-center font-bold" primary='Navigation'/>
                         </ListItem> 
                         <Divider />
+                        <ListItem key='home' disablePadding component={Link} to="/home">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <HomeIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary='Home' />
+                            </ListItemButton>
+                        </ListItem>
                         <ListItem key='venue' disablePadding component={Link} to="/venue">
                             <ListItemButton>
                                 <ListItemIcon>
@@ -74,6 +87,14 @@ function Header(){
                                     <ViewListIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary='Order Of Service' />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem key='RSVP' disablePadding component={Link} to="/RSVP">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <RsvpIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary='RSVP' />
                             </ListItemButton>
                         </ListItem>
                     </List>

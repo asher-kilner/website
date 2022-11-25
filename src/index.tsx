@@ -7,6 +7,7 @@ import Login from "./Components/Login";
 import OrderOfService from 'Components/OrderOfService';
 import Venue from 'Components/Venue';
 import Accomodation from 'Components/Accomodation';
+import RSVPForm from 'Components/RSVPForm';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ root.render(
         <Route path="/venue" element={<Venue />}/>
         <Route path="/accomodation" element={<Accomodation />}/>
         <Route path="/order_of_service" element={<OrderOfService />}/>
+        <Route path="/RSVP" element={<RSVPForm />}/>
         <Route
             path="*"
             element={<Navigate to="/home" replace />}

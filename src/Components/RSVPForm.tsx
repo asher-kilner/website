@@ -1,8 +1,10 @@
 import * as React from "react";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
-import Navigation from "./Navigation"
 import Alert from "@mui/material/Alert";
+import Header from "./Header";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { appTheme } from "themes/theme";
 
 function RSVPForm(){
     const [open, setOpen] = React.useState(false);
@@ -24,7 +26,11 @@ function RSVPForm(){
     };
 
     return(
-        <div className="h- b bg-regal-blue">
+        <ThemeProvider theme={appTheme}>
+            <CssBaseline enableColorScheme />
+            <Header/>
+            
+            
             <form className="flex-auto p-4"onSubmit={handleSubmit}>
                 <div className="flex pt-3 mb-2 w-2/5">
                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={e => setEmail(e.target.value)} id="password" type="text" placeholder="Email"/>
@@ -44,8 +50,8 @@ function RSVPForm(){
                 <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                     This is a success message!
                 </Alert>
-            </Snackbar>
-        </div>
+            </Snackbar>  
+        </ThemeProvider>
     );
 };
 
