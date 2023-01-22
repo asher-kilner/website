@@ -1,10 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400;1,700&display=swap');
 
 ::placeholder {
     text-align: center; 
  }
 input:focus::placeholder {
     color: transparent;
+}
+
+@layer  base {
+    @font-face {
+        font-family: theSeasons;
+        src: url('../fonts/theSeasons/theseasons-reg.otf') format('truetype');
+    }
 }

@@ -26,13 +26,11 @@ function App() {
     return (
         <ThemeProvider theme={appTheme}>
             <CssBaseline enableColorScheme />
-            <div>
+            <div style={{ color: appTheme.palette.secondary.main }}>
                 <Header/>
                 <h1>Asher loves chelsea lots and lots X</h1>
-                <Button color="primary" variant="contained" onClick={handleRSVP}>
-                RSVP
-                </Button> 
-                <Footer/>
+                
+                {/* <Footer/> */}
             </div>
         </ThemeProvider>
     );

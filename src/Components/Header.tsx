@@ -1,11 +1,5 @@
-import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
-import GiteIcon from '@mui/icons-material/Gite';
-import BedIcon from '@mui/icons-material/Bed';
-import RsvpIcon from '@mui/icons-material/Rsvp';
-import HomeIcon from '@mui/icons-material/Home';
-import { Link, useNavigate } from "react-router-dom";
-import ViewListIcon from '@mui/icons-material/ViewList';
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 function Header(){
@@ -23,8 +17,61 @@ function Header(){
         navigate("/login");
     }
     return(
-        <header>
-            <Box sx={{ flexGrow: 1 }}>
+        <header className="bg-cover bg-header-background flex-auto flex h-screen">
+            <div className="absolute ml-20 mt-20 w-40">
+                <div className="flex flex-wrap space-y-4 font-cormorantGaramond text-xl">
+                    <a href="https://www.w3schools.com">Venue</a>
+                    <a href="https://pluralsight.com">Accomodation</a>
+                    <a href="https://pluralsight.com">Order Of Service</a>
+                    <a href="https://pluralsight.com">Dress Code</a>
+                    <a href="https://pluralsight.com">Wedding Party</a>
+                    <a href="https://pluralsight.com">Gallery</a>
+                </div>
+            </div>
+            <div className="absolute inset-0 flex justify-center items-center z-10 font-cormorantGaramond">
+                <img src="./logo.png" width="200" height="267" alt="me"/>
+                <div className="text-8xl">Asher & Chelsea</div>
+            </div>
+            <div className="absolute inset-0 flex justify-right items-center z-10 font-cormorantGaramond">
+                <Button color="primary" variant="contained" className="fixed">
+                    RSVP
+                </Button> 
+            </div>
+                
+                {/* <Box 
+                bgcolor="secondary.main" 
+                sx={{ height: 260 }} 
+                className="">
+                <List>
+                    <ListItem key='home' disablePadding component={Link} to="/home">
+                        <ListItemButton>
+                            <ListItemText primary='Home' />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key='venue' disablePadding component={Link} to="/venue">
+                        <ListItemButton>
+                            <ListItemText primary='Venue' />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key='accomodation' disablePadding component={Link} to="/accomodation">
+                        <ListItemButton>
+                            <ListItemText primary='Accomodation' />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key='orderOfService' disablePadding component={Link} to="/order_of_service">
+                        <ListItemButton>
+                            <ListItemText primary='Order Of Service' />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key='RSVP' disablePadding component={Link} to="/RSVP">
+                        <ListItemButton>
+                            <ListItemText primary='RSVP' />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
+            </Box> */}
+            
+            {/* <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
                     <Toolbar>
                     <IconButton
@@ -99,7 +146,8 @@ function Header(){
                         </ListItem>
                     </List>
                 </Box>
-            </Drawer>
+            </Drawer> */}
+            
         </header>
     )
  }

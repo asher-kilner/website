@@ -1,19 +1,23 @@
-import { blue, green, pink, purple } from "@mui/material/colors"
+
 import { createTheme } from "@mui/material/styles"
 
 export const appTheme = createTheme({
     palette: {
         primary: {
-          light: '#487e4c',
-          main: '#1b5e20',
-          dark: '#124116',
-          contrastText: '#fff',
+          main: '#3a5743',
         },
         secondary: {
-          light: '#b7deb8',
-          main: '#a5d6a7',
-          dark: '#739574',
-          contrastText: '#000',
+          main: '#e8e1dc',
         },
-      },
+    },
+    // overrides: {
+    //     // Style sheet name ⚛️
+    //     MuiButton: {
+    //       // Name of the rule
+    //       text: {
+    //         // Some CSS
+    //         color: 'white',
+    //       },
+    //     },
+    //   },
 });
